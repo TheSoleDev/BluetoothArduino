@@ -25,16 +25,15 @@
             <h1>Bluetooth Command</h1>
 
             <div id="mainPage">
-                <ul id="deviceList">
+                <ul id="deviceList" data-role="listview">
                 </ul>
                 <button id="refreshButton">Refresh</button>
             </div>
             <div id="detailPage">
-                <div id="resultDiv"></div>
-                
+               
                 <div class="row">
-                  <div class="col-xs-12 col-sm-6" style="text-align:center;"><a class="kbd light btn-action" data-value="up"><i class="fa fa-arrow-up txt-30"></i></a><br /><a class="kbd light btn-action" data-value="left"><i class="fa fa-arrow-left txt-30"></i></a><a class="kbd light btn-action" data-value="down"><i class="fa fa-arrow-down txt-30"></i></a><a class="kbd light btn-action" data-value="right"><i class="fa fa-arrow-right txt-30"></i></a></div>
-                  <div class="col-xs-12 col-sm-6" style="text-align:center;"><br /><a class="kbd light btn-action" data-value="play"><i class="fa fa-play txt-30"></i></a>&nbsp;<a class="kbd light btn-action"  data-value="stop"><i class="fa fa-stop txt-30"></i></a></div>              
+                  <div class="col-xs-12 col-sm-6" style="text-align:center;"><a class="kbd light btn-action" data-value="u"><i class="fa fa-arrow-up txt-30"></i></a><br /><a class="kbd light btn-action" data-value="l"><i class="fa fa-arrow-left txt-30"></i></a><a class="kbd light btn-action" data-value="d"><i class="fa fa-arrow-down txt-30"></i></a><a class="kbd light btn-action" data-value="r"><i class="fa fa-arrow-right txt-30"></i></a></div>
+                  <div class="col-xs-12 col-sm-6" style="text-align:center;"><br /><a class="kbd light btn-action" data-value="p"><i class="fa fa-play txt-30"></i></a>&nbsp;<a class="kbd light btn-action"  data-value="s"><i class="fa fa-stop txt-30"></i></a></div>              
                 </div>
                 <br />
                 <div class="row">
@@ -45,6 +44,7 @@
                 <div class="row">
                   <div class="col-sm-12" style="text-align:center;"><button id="disconnectButton">Disconnect</button></div>
                 </div>
+                <div id="resultDiv"></div>                
             </div>
             <div id="statusDiv"></div>
 
