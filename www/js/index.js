@@ -82,7 +82,8 @@ var app = {
             } else {
               listItem.dataset.deviceId = device.id;
             }
-            deviceList.appendChild(listItem).trigger('create');
+            deviceList.appendChild(listItem);
+            $('#deviceList').trigger('create');
         });
 
         if (devices.length === 0) {
