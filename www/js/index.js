@@ -32,8 +32,10 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         refreshButton.addEventListener(TOUCH_START, this.refreshDeviceList, false);
         sendButton.addEventListener(TOUCH_START, this.sendData, false);
+        // document.getElementsByClassName("btn-action").addEventListener(TOUCH_START, this.sendAction, false);
         disconnectButton.addEventListener(TOUCH_START, this.disconnect, false);
         deviceList.addEventListener('touchstart', this.connect, false);
+
     },
     onDeviceReady: function() {
         app.refreshDeviceList();
