@@ -17,6 +17,21 @@
 /* global cordova, bluetoothSerial  */
 /* jshint browser: true , devel: true*/
 'use strict';
+$('#detailPage').on('click','.btn-action',function(e) { 
+    var data = $(this).data('value');
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+});
 
 var app = {
     initialize: function() {
@@ -32,7 +47,6 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         refreshButton.addEventListener(TOUCH_START, this.refreshDeviceList, false);
         sendButton.addEventListener(TOUCH_START, this.sendData, false);
-        // document.getElementsByClassName("btn-action").addEventListener(TOUCH_START, this.sendAction, false);
         disconnectButton.addEventListener(TOUCH_START, this.disconnect, false);
         deviceList.addEventListener('touchstart', this.connect, false);
 

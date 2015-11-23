@@ -6,13 +6,13 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <title>Bluetooth Arduino</title>
         <link rel="stylesheet" type="text/css" href="css/vendor/jquery.mobile-1.4.5.css" />
         <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <script type="text/javascript" src="css/vendor/font-awesome.js"></script>   
-        <title>Bluetooth Arduino</title>
-                <script type="text/javascript" src="cordova.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.css" /> 
+        <link rel="stylesheet" type="text/css" href="css/index.css" />        
+
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>        
             
         <script type="text/javascript" src="js/vendor/jquery-1.11.3.js"></script>
@@ -31,18 +31,24 @@
             </div>
             <div id="detailPage">
                 <div id="resultDiv"></div>
-                <div>
-                    <input type="text" id="messageInput" value="" placeholder="Type Command Here"/>
-                    <button id="sendButton">Send</button>
+                
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6" style="text-align:center;"><a class="kbd light btn-action" data-value="up"><i class="fa fa-arrow-up txt-30"></i></a><br /><a class="kbd light btn-action" data-value="left"><i class="fa fa-arrow-left txt-30"></i></a><a class="kbd light btn-action" data-value="down"><i class="fa fa-arrow-down txt-30"></i></a><a class="kbd light btn-action" data-value="right"><i class="fa fa-arrow-right txt-30"></i></a></div>
+                  <div class="col-xs-12 col-sm-6" style="text-align:center;"><br /><a class="kbd light btn-action" data-value="play"><i class="fa fa-play txt-30"></i></a>&nbsp;<a class="kbd light btn-action"  data-value="stop"><i class="fa fa-stop txt-30"></i></a></div>              
                 </div>
-                <button id="disconnectButton">Disconnect</button>
+                <br />
+                <div class="row">
+                  <div class="col-sm-8" style="text-align:center;"><input type="text" id="messageInput" class="form-control" value="" placeholder="Type Command Here"/></div>
+                  <div class="col-sm-4" style="text-align:center;"><button id="sendButton"  class="btn btn-default">Send</button></div>
+                </div>
+                <br />
+                <div class="row">
+                  <div class="col-sm-12" style="text-align:center;"><button id="disconnectButton">Disconnect</button></div>
+                </div>
             </div>
             <div id="statusDiv"></div>
 
-            <div class="row">
-              <div class="col-xs-5 col-sm-4" style="text-align:center;"><a class="kbd light btn-action" data-value="up"><i class="fa fa-arrow-up txt-30"></i></a><br /><a class="kbd light btn-action" data-value="left"><i class="fa fa-arrow-left txt-30"></i></a><a class="kbd light btn-action" data-value="down"><i class="fa fa-arrow-down txt-30"></i></a><a class="kbd light btn-action" data-value="right"><i class="fa fa-arrow-right txt-30"></i></a></div>
-              <div class="col-xs-3 col-sm-3" style="text-align:center;"><br /><a class="kbd light btn-action" data-value="play"><i class="fa fa-play txt-30"></i></a>&nbsp;<a class="kbd light btn-action"  data-value="stop"><i class="fa fa-stop txt-30"></i></a></div>              
-            </div>
+
 
 
         </div>
@@ -51,12 +57,12 @@
         <script type="text/javascript" src="js/vendor/jquery-1.11.3.js"></script>
         <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
        
-
   
         <script type="text/javascript" src="js/index.js"></script>          
         <script type="text/javascript">
 
-            app.initialize();
+            //app.initialize();
+            app.showDetailPage();
 
         </script>
     </body>
