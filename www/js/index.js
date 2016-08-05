@@ -17,6 +17,98 @@
 /* global cordova, bluetoothSerial  */
 /* jshint browser: true , devel: true*/
 'use strict';
+$('#detailPage').on('click','.btn-door',function(e) { 
+    var data = $(this).data('value');
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+    if(data == 'lock'){
+        $('#btn-lock').hide();
+        $('#btn-unlock').show();
+    }
+    else{
+        $('#btn-lock').show();
+        $('#btn-unlock').hide();
+
+    }
+});
+
+$('#detailPage').on('click','.btn-light',function(e) { 
+    var data = $(this).data('value');
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+    if(data == 'l-on'){
+        $('#btn-l-on').hide();
+        $('#btn-l-off').show();
+    }
+    else{
+        $('#btn-l-on').show();
+        $('#btn-l-off').hide();
+
+    }
+});
+
+$('#detailPage').on('click','.btn-fan',function(e) { 
+    var data = $(this).data('value');
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+    if(data == 'f-on'){
+        $('#btn-f-on').hide();
+        $('#btn-f-off').show();
+    }
+    else{
+        $('#btn-f-on').show();
+        $('#btn-f-off').hide();
+
+    }
+});
+
+
+$('#detailPage').on('click','.btn-action',function(e) { 
+    var data = $(this).data('value');
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+});
+
 $('#detailPage').on('click','.btn-action',function(e) { 
     var data = $(this).data('value');
     var success = function() {
