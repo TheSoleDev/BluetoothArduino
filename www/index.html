@@ -17,45 +17,87 @@
             
         <script type="text/javascript" src="js/vendor/jquery-1.11.3.js"></script>
         <script type="text/javascript" src="js/vendor/jquery.mobile-1.4.5.js"></script> 
-
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     </head>
     <body>
 
         <div class="app">
-            <h1>Bluetooth Command</h1>
+            <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 text-center">
+                            <h1>Bluetooth Command<br /><small>BY JBG</small></h1>
+                        </div>
+                    </div>                
+                
 
-            <div id="mainPage">
-                <ul id="deviceList" data-role="listview">
-                </ul>
-                <button id="refreshButton">Refresh</button>
+                <div id="mainPage">
+                    <ul id="deviceList" data-role="listview">
+                    </ul>
+                    <button id="refreshButton">Refresh</button>
+
+
+                </div>
+                <div id="detailPage">
+
+                    <!-- <label for="led-red">Red:</label>
+                        <input type="range" name="led-red" id="led-red" data-highlight="true" min="0" max="255" value="50">
+                        <label for="led-green">Green:</label>
+                        <input type="range" name="led-green" id="led-green" data-highlight="true" min="0" max="255" value="50">
+                        <label for="led-blue">Blue:</label>
+                        <input type="range" name="led-blue" id="led-blue" data-highlight="true" min="0" max="255" value="50">                                
+
+                    <br /> <br /> -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <h3>DOOR CONTROL</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 text-center">
+                            <a class="btn btn-default btn-door" id="btn-lock" data-value="lock"><i class="fa fa-lock" aria-hidden="true"></i> LOCK</a>
+                            <a class="btn btn-danger btn-door" style="display:none;" id="btn-unlock" data-value="unlock"><i class="fa fa-unlock" aria-hidden="true"></i> UNLOCK</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <h3>LIGHT CONTROL</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 text-center">
+                            <a class="btn btn-default btn-light" id="btn-l-on" data-value="l-on">TURN ON</a>
+                            <a class="btn btn-danger btn-light" style="display:none;" id="btn-l-off" data-value="l-off">TURN OFF</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <h3>FAN CONTROL</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 text-center">
+                            <a class="btn btn-default btn-fan" id="btn-f-on" data-value="f-on">TURN ON</a>
+                            <a class="btn btn-danger btn-fan" style="display:none;" id="btn-f-off" data-value="f-off">TURN OFF</a>
+                        </div>
+                    </div>                      
+                    <br /><br/>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6" style="text-align:center;"><a class="kbd light btn-action" data-value="u"><i class="fa fa-arrow-up txt-30"></i></a><br /><a class="kbd light btn-action" data-value="l"><i class="fa fa-arrow-left txt-30"></i></a><a class="kbd light btn-action" data-value="d"><i class="fa fa-arrow-down txt-30"></i></a><a class="kbd light btn-action" data-value="r"><i class="fa fa-arrow-right txt-30"></i></a></div>
+                      <div class="col-xs-12 col-sm-6" style="text-align:center;"><br /><a class="kbd light btn-action" data-value="p"><i class="fa fa-play txt-30"></i></a>&nbsp;<a class="kbd light btn-action"  data-value="s"><i class="fa fa-stop txt-30"></i></a></div>              
+                    </div>
+                    <br />
+                    <div class="row">
+                      <div class="col-sm-8" style="text-align:center;"><input type="text" id="messageInput" class="form-control" value="" placeholder="Type Command Here"/></div>
+                      <div class="col-sm-4" style="text-align:center;"><button id="sendButton"  class="btn btn-default">Send</button></div>
+                    </div>
+                    <br />
+                    <div class="row">
+                      <div class="col-sm-12" style="text-align:center;"><button id="disconnectButton">Disconnect</button></div>
+                    </div>
+                    <div id="resultDiv"></div>                
+                </div>
+                <div id="statusDiv"></div>
             </div>
-            <div id="detailPage">
-
-<!--                     <label for="led-red">Red:</label>
-                    <input type="range" name="led-red" id="led-red" data-highlight="true" min="0" max="255" value="50">
-                    <label for="led-green">Green:</label>
-                    <input type="range" name="led-green" id="led-green" data-highlight="true" min="0" max="255" value="50">
-                    <label for="led-blue">Blue:</label>
-                    <input type="range" name="led-blue" id="led-blue" data-highlight="true" min="0" max="255" value="50">                                
-
-                <br />                <br /> -->
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6" style="text-align:center;"><a class="kbd light btn-action" data-value="u"><i class="fa fa-arrow-up txt-30"></i></a><br /><a class="kbd light btn-action" data-value="l"><i class="fa fa-arrow-left txt-30"></i></a><a class="kbd light btn-action" data-value="d"><i class="fa fa-arrow-down txt-30"></i></a><a class="kbd light btn-action" data-value="r"><i class="fa fa-arrow-right txt-30"></i></a></div>
-                  <div class="col-xs-12 col-sm-6" style="text-align:center;"><br /><a class="kbd light btn-action" data-value="p"><i class="fa fa-play txt-30"></i></a>&nbsp;<a class="kbd light btn-action"  data-value="s"><i class="fa fa-stop txt-30"></i></a></div>              
-                </div>
-                <br />
-                <div class="row">
-                  <div class="col-sm-8" style="text-align:center;"><input type="text" id="messageInput" class="form-control" value="" placeholder="Type Command Here"/></div>
-                  <div class="col-sm-4" style="text-align:center;"><button id="sendButton"  class="btn btn-default">Send</button></div>
-                </div>
-                <br />
-                <div class="row">
-                  <div class="col-sm-12" style="text-align:center;"><button id="disconnectButton">Disconnect</button></div>
-                </div>
-                <div id="resultDiv"></div>                
-            </div>
-            <div id="statusDiv"></div>
-
 
 
 
