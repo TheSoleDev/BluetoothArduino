@@ -58,3 +58,7 @@
 	font-size: 30px;
     padding: 15px;
 }
+h1 small{font-size: 14px !important;}
+a.btn{padding: 15px 35px; width: 350px;}
+a.btn-danger{color:#ffffff;}
+a.btn-danger:hover{color:#000000; text-shadow:none;}
