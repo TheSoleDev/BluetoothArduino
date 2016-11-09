@@ -222,21 +222,7 @@ $('#detailPage').on('click','.btn-action',function(e) {
 
 });
 
-$('#detailPage').on('click','.btn-action',function(e) { 
-    var data = $(this).data('value');
-    var success = function() {
-        console.log("success");
-        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
-        resultDiv.scrollTop = resultDiv.scrollHeight;
-    };
 
-    var failure = function() {
-        alert("Failed writing data to Bluetooth peripheral");
-    };
-
-    bluetoothSerial.write(data, success, failure);
-
-});
 
 var app = {
     initialize: function() {
