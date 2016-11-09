@@ -17,6 +17,119 @@
 /* global cordova, bluetoothSerial  */
 /* jshint browser: true , devel: true*/
 'use strict';
+
+
+// CLAW REMOTE
+$('#detailPage').on('click','.btn-claw',function(e) { 
+    var data = $(this).data('value');
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+    if(data == 'open'){
+        $('#btn-claw-open').hide();
+        $('#btn-claw-close').show();
+    }
+    else{
+        $('#btn-claw-open').show();
+        $('#btn-claw-close').hide();
+
+    }
+});
+
+$('#detailPage').on('change','#servo-1',function(e) { 
+    var data = 'servo1:' +$(this).val();
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+});
+
+$('#detailPage').on('change','#servo-2',function(e) { 
+    var data = 'servo2:' +$(this).val();
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+});
+
+$('#detailPage').on('change','#servo-3',function(e) { 
+    var data = 'servo3:' +$(this).val();
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+});
+
+$('#detailPage').on('change','#servo-4',function(e) { 
+    var data = 'servo4:' +$(this).val();
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+});
+
+$('#detailPage').on('change','#servo-5',function(e) { 
+    var data = 'servo5:' +$(this).val();
+    var success = function() {
+        console.log("success");
+        resultDiv.innerHTML = resultDiv.innerHTML + "Sent: " + data+ "<br/>";
+        resultDiv.scrollTop = resultDiv.scrollHeight;
+    };
+
+    var failure = function() {
+        alert("Failed writing data to Bluetooth peripheral");
+    };
+
+    bluetoothSerial.write(data, success, failure);
+
+});
+
+
+
+
+
+
 $('#detailPage').on('click','.btn-door',function(e) { 
     var data = $(this).data('value');
     var success = function() {
